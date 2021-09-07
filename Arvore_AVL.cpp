@@ -95,7 +95,18 @@ class T{
             return Min(T->dir);
         }
     }
-
+    
+    No* busca(int k){
+        No* U = raiz;
+        while(U != NULL){
+            if(U->valor == k){
+                break;
+            }
+            U = U->valor < k ? U->dir : U->esq;
+        }
+        return U;
+    }
+    
     No* remove(int x, No* T){
         No* aux;
 
